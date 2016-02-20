@@ -1,9 +1,8 @@
-## These functions create and manipulate a 'matrix' 
-## that can store its computed inverse
-## and utilise it when required
+## These functions create and manipulate a special 'matrix' object
+## that can store its computed inverse and utilise it when required
 
-## This function creates a list of functions (to be treated as an object)
-## that stores and updates a matrix and its inverse
+## This function creates a special "matrix" object (list of functions)
+## that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -20,7 +19,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function computes the inverse of the input matrix
+## This function computes the inverse of the input special "matrix" object
 ## or returns the cached result if already computed.
 
 cacheSolve <- function(x, ...) {
